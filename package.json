@@ -1,0 +1,19 @@
+{
+  "name": "@beaker/site-info-app",
+  "version": "1.0.0",
+  "description": "The UI shown in Beaker's \"certificate\" / site-identity dropdown ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beakerbrowser/beaker-site-info-app.git"
+  },
+  "author": "Paul Frazee <pfrazee@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beakerbrowser/beaker-site-info-app/issues"
+  },
+  "homepage": "https://github.com/beakerbrowser/beaker-site-info-app#readme"
+}
