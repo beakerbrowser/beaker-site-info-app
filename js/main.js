@@ -169,9 +169,9 @@ class SiteInfoApp extends LitElement {
       this.rootUrl = (await navigator.filesystem.getRoot()).url
     }
     if (!this.user) {
-      this.user = await UwG.profiles.me()
+      this.user = await uwg.profiles.me()
     }
-    this.followedUsers = (await UwG.follows.list({author: this.user.url})).map(({topic}) => topic.url)
+    this.followedUsers = (await uwg.follows.list({author: this.user.url})).map(({topic}) => topic.url)
    
     this.info = {}
     this.manifest = null
@@ -200,10 +200,10 @@ class SiteInfoApp extends LitElement {
       }
 
       // fetch forks
-      this.forks = await UwG.library.list({forkOf: this.origin})
+      this.forks = await uwg.library.list({forkOf: this.origin})
 
       // read social data
-      this.followers = (await UwG.follows.list({author: this.feedAuthors, topic: this.origin})).map(({author}) => author)
+      this.followers = (await uwg.follows.list({author: this.feedAuthors, topic: this.origin})).map(({author}) => author)
     } else {
       this.info = {
         title: this.hostname,
@@ -520,32 +520,32 @@ class SiteInfoApp extends LitElement {
   }
 
   async onClickHost (e) {
-    await UwG.library.configure(this.origin, {isSaved: true, isHosting: true})
+    await uwg.library.configure(this.origin, {isSaved: true, isHosting: true})
     this.load()
   }
 
   async onClickUnhost (e) {
-    await UwG.library.configure(this.origin, {isHosting: false})
+    await uwg.library.configure(this.origin, {isHosting: false})
     this.load()
   }
 
   async onClickSave (e) {
-    await UwG.library.configure(this.origin, {isSaved: true})
+    await uwg.library.configure(this.origin, {isSaved: true})
     this.load()
   }
 
   async onClickUnsave (e) {
-    await UwG.library.configure(this.origin, {isSaved: false})
+    await uwg.library.configure(this.origin, {isSaved: false})
     this.load()
   }
 
   async onClickFollow () {
-    await UwG.follows.add(this.origin)
+    await uwg.follows.add(this.origin)
     this.load()
   }
 
   async onClickUnfollow () {
-    await UwG.follows.remove(this.origin)
+    await uwg.follows.remove(this.origin)
     this.load()
   }
 
