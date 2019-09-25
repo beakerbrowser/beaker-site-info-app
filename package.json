@@ -1,6 +1,6 @@
 {
   "name": "@beaker/site-info-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The UI shown in Beaker's \"certificate\" / site-identity dropdown ",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
